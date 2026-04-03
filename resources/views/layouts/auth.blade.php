@@ -17,7 +17,9 @@
 
 <body>
 
+
     @yield('content')
+
 
     <!--! BEGIN: Vendors JS !-->
     <script src="{{ asset('vendors/js/vendors.min.js') }}"></script>

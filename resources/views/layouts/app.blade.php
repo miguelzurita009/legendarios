@@ -11,12 +11,14 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/css/vendors.min.css') }}">
+    @stack('vendors-css')
     <!--! BEGIN: Custom CSS-->
     <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}">
     <!--! END: Custom CSS-->
 
 
     {{-- @vite(['resources/sass/theme.scss']) --}}
+    @livewireStyles
 </head>
 
 <body>
@@ -31,7 +33,11 @@
     <main class="nxl-container">
         <div class="nxl-content">
             {{-- Page Content --}}
-            @yield('content')
+            @if (isset($slot))
+                {{ $slot }}
+            @else
+                @yield('content')
+            @endif
 
             {{-- Footer --}}
             @include('layouts.partials.footer')
@@ -52,7 +58,7 @@
     <script src="{{ asset('js/theme-customizer-init.min.js') }}"></script>
     <!--! END: Theme Customizer !-->
     {{-- @stack('scripts') --}}
-
+    @livewireScripts
 </body>
 
 </html>
