@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth; //necesario para usar Auth::check
 use App\Livewire\Users\Index;
 use App\Livewire\Users\Show;
+use App\Livewire\Roles\Index as RolesIndex;
 
 Route::get('/', function () {
     return redirect()->route('dashboard');
@@ -24,6 +25,9 @@ Route::middleware('auth')->group(function () {
     //Modulo Usuario
     Route::get('/users', Index::class)->name('users.index');
     Route::get('/users/{user}', Show::class)->name('users.show');
+
+    //Roles
+    Route::get('/roles', RolesIndex::class)->name('roles.index');
 
 });
 

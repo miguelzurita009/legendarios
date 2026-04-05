@@ -31,13 +31,15 @@
 
     {{-- Contenido principal --}}
     <main class="nxl-container">
-        <div class="nxl-content">
+        <div class="nxl-content d-flex flex-column" style="min-height: 100vh;">
             {{-- Page Content --}}
-            @if (isset($slot))
-                {{ $slot }}
-            @else
-                @yield('content')
-            @endif
+            <div class="flex-grow-1">
+                @if (isset($slot))
+                    {{ $slot }}
+                @else
+                    @yield('content')
+                @endif
+            </div>
 
             {{-- Footer --}}
             @include('layouts.partials.footer')
@@ -49,6 +51,30 @@
     <script src="{{ asset('vendors/js/vendors.min.js') }}"></script>
     <!-- vendors.min.js {always must need to be top} -->
     @stack('vendors')
+    <script>
+        $.extend(true, $.fn.dataTable.defaults, {
+            language: {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                }
+            }
+        });
+    </script>
     <!--! END: Vendors JS !-->
     <!--! BEGIN: Apps Init  !-->
     <script src="{{ asset('js/common-init.min.js') }}"></script>
