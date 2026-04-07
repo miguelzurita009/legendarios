@@ -32,7 +32,7 @@ class UserForm extends Form
             'apellido_paterno' => 'required|string|max:255',
             'apellido_materno' => 'nullable|string|max:255',
             'fecha_nacimiento' => 'required|date|before:today',
-            'telefono'         => 'required|numeric|max:20',
+            'telefono'         => 'required|string|max:20',
             'ci'               => $ciRule,
             'email'            => $emailRule,
         ];

@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth; //necesario para usar Auth::check
 use App\Livewire\Users\Index;
 use App\Livewire\Users\Show;
+use App\Livewire\TipoAnalisis\Index as TipoAnalisisIndex;
+use App\Livewire\TipoAnalisis\Show as TipoAnalisisShow;
+use App\Livewire\Eventos\Index as EventosIndex;
+use App\Livewire\Eventos\Show as EventosShow;
 use App\Livewire\Roles\Index as RolesIndex;
 
 Route::get('/', function () {
@@ -25,6 +29,14 @@ Route::middleware('auth')->group(function () {
     //Modulo Usuario
     Route::get('/users', Index::class)->name('users.index');
     Route::get('/users/{user}', Show::class)->name('users.show');
+
+    // 🔥 Módulo Tipo Analisis
+    Route::get('/tipo-analisis', TipoAnalisisIndex::class)->name('tipo-analisis.index');
+    Route::get('/tipo-analisis/{tipo}', TipoAnalisisShow::class)->name('tipo-analisis.show');
+
+    // Módulo Eventos
+    Route::get('/eventos', EventosIndex::class)->name('eventos.index');
+    Route::get('/eventos/{evento}', EventosShow::class)->name('eventos.show');
 
     //Roles
     Route::get('/roles', RolesIndex::class)->name('roles.index');

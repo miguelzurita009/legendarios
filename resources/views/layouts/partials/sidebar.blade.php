@@ -3,7 +3,7 @@
             <div class="m-header">
                 <a href="index.html" class="b-brand">
                     <!-- ========   change your logo hear   ============ -->
-                    <img src="{{ asset('images/logo-full.png') }}" alt="" class="logo logo-lg" />
+                    <img src="{{ asset('images/logo-full.png') }}" alt="" class="logo logo-lg" width="100" />
                     <img src="{{ asset('images/logo-abbr.png') }}" alt="" class="logo logo-sm" />
                 </a>
             </div>

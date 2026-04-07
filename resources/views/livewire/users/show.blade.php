@@ -63,6 +63,52 @@
                         </div>
                         <div class="row mb-4 align-items-center">
                             <div class="col-lg-4">
+                                <label class="fw-semibold">Apellido Paterno: </label>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="feather-user"></i></div>
+                                    <input type="text" class="form-control" value="{{ $user->apellido_paterno }}"
+                                        readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-lg-4">
+                                <label class="fw-semibold">Apellido Materno: </label>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="feather-user"></i></div>
+                                    <input type="text" class="form-control" value="{{ $user->apellido_materno }}"
+                                        readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-lg-4">
+                                <label class="fw-semibold">CI: </label>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="feather-credit-card"></i></div>
+                                    <input type="text" class="form-control" value="{{ $user->ci }}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-lg-4">
+                                <label class="fw-semibold">Teléfono: </label>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="feather-phone"></i></div>
+                                    <input type="text" class="form-control" value="{{ $user->telefono }}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-lg-4">
                                 <label for="mailInput" class="fw-semibold">Email: </label>
                             </div>
                             <div class="col-lg-8">
@@ -70,6 +116,19 @@
                                     <div class="input-group-text"><i class="feather-mail"></i></div>
                                     <input type="text" class="form-control" id="mailInput"
                                         value="{{ $user->email }}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4 align-items-center">
+                            <div class="col-lg-4">
+                                <label class="fw-semibold">Fecha de Nacimiento: </label>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="input-group">
+                                    <div class="input-group-text"><i class="feather-calendar"></i></div>
+                                    <input type="text" class="form-control"
+                                        value="{{ $user->fecha_nacimiento ? \Carbon\Carbon::parse($user->fecha_nacimiento)->format('d/m/Y') : '' }}"
+                                        readonly>
                                 </div>
                             </div>
                         </div>
@@ -90,9 +149,10 @@
                             <a href="{{ route('users.index') }}" class="btn btn-secondary">
                                 <i class="feather-arrow-left me-2"></i>Volver
                             </a>
+                            {{--
                             <a href="{{ route('users.index') }}" class="btn btn-primary">
                                 <i class="feather-edit me-2"></i>Editar Información
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                 </div>
