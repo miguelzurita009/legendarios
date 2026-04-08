@@ -10,7 +10,7 @@
                 <h5 class="m-b-10">Eventos</h5>
             </div>
             <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inicio</a></li>
                 <li class="breadcrumb-item">Eventos</li>
             </ul>
         </div>

@@ -10,7 +10,7 @@
                 <h5 class="m-b-10">Usuarios</h5>
             </div>
             <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Inicio</a></li>
                 <li class="breadcrumb-item">Usuarios</li>
             </ul>
         </div>
@@ -51,7 +51,8 @@
                                         <th>Apellido Materno</th>
                                         <th>Nombre</th>
                                         <th>Teléfono</th>
-                                        <th>Rol</th>
+                                        <th>Fecha de Nacimiento</th>
+                                        {{-- <th>Rol</th> --}}
                                         <th>Creado</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -65,10 +66,13 @@
                                             <td>{{ strtoupper($user->apellido_materno) }}</td>
                                             <td>{{ strtoupper($user->name) }}</td>
                                             <td>{{ $user->telefono }}</td>
-                                            {{-- Rol: vacío por ahora, se completará con Spatie --}}
-                                            <td>
-                                                <span class="badge bg-secondary">Sin rol</span>
+                                            <td>{{ $user->fecha_nacimiento ? \Carbon\Carbon::parse($user->fecha_nacimiento)->format('d/m/Y') : '' }}
                                             </td>
+
+                                            {{-- Rol: vacío por ahora, se completará con Spatie --}}
+                                            {{-- <td>
+                                                <span class="badge bg-secondary">Sin rol</span>
+                                            </td> --}}
                                             <td>{{ $user->created_at->format('d/m/Y') }}</td>
                                             <td>
                                                 <div class="d-flex gap-2">

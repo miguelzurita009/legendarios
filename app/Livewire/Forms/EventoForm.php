@@ -43,7 +43,7 @@ class EventoForm extends Form
     public function setEvento(Evento $evento): void
     {
         $this->evento    = $evento;
-        $this->fecha     = $evento->fecha; // formato HTML date
+        $this->fecha     = $evento->fecha;
         $this->capacidad = $evento->capacidad;
         $this->estado    = $evento->estado;
     }
